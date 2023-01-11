@@ -24,13 +24,11 @@ public class Note {
     @Column(name = "note_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id")
-    private Account account;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "isbn")
-    private Book book;
     private String contents;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "myBook_id")
+    private MyBook myBook;
 
     @CreatedDate
     @Column(updatable = false)

@@ -8,12 +8,15 @@ import toyproject1.bookmanbo.domain.Period;
 import toyproject1.bookmanbo.domain.Status;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
 public class MyBook {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "myBook_id")
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -28,4 +31,6 @@ public class MyBook {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @OneToMany(mappedBy = "myBook")
+    private List<Note> notes = new ArrayList<>();
 }
