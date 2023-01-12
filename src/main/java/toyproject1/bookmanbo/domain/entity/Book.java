@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 public class Book {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long isbn;
     private String title;
     private String author;
@@ -28,4 +28,15 @@ public class Book {
     @OneToMany(mappedBy = "book")
     private List<MyBook> myBooks = new ArrayList<>();
 
+    public Book(Long isbn, String title, String author, LocalDateTime pubDate, String description, String coverImage, String category, String publisher, int itemPage) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.pubDate = pubDate;
+        this.description = description;
+        this.coverImage = coverImage;
+        this.category = category;
+        this.publisher = publisher;
+        this.itemPage = itemPage;
+    }
 }
