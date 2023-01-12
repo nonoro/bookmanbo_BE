@@ -11,7 +11,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -47,6 +46,12 @@ public class Note {
         this.contents = contents;
     }
 
+    public Note(String contents, MyBook myBook) {
+        validate(contents);
+        this.contents = contents;
+        this.myBook = myBook;
+    }
+
     private void validate(String contents) {
         if (contents == null || contents.equals("")) {
             throw new IllegalArgumentException("내용은 빈값이거나 null 일 수 없습니다");
@@ -55,5 +60,13 @@ public class Note {
         if (contents.length() > MAX_LENGTH) {
             throw new IllegalArgumentException("내용의 길이는 " + MAX_LENGTH + "보다 클 수 없습니다.");
         }
+    }
+
+    public void updateContents(String contents) {
+        this.contents = contents;
+    }
+
+    public void addKeywords(NoteKeyword noteKeyword) {
+        this.keywords.add(noteKeyword);
     }
 }
