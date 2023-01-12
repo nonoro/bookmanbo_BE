@@ -26,8 +26,7 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private List<MyBook> myBooks = new ArrayList<>();
 
-    public Account(Long id, String account, String password, String nickname) {
-        this.id = id;
+    public Account(String account, String password, String nickname) {
         this.account = account;
         this.password = password;
         this.nickname = nickname;

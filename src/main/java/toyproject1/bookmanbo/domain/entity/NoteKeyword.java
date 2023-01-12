@@ -22,4 +22,9 @@ public class NoteKeyword {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "keyword_id")
     private Keyword keyword;
+
+    public NoteKeyword(Note note, Keyword keyword) {
+        this.note = note;
+        this.keyword = keyword;
+    }
 }

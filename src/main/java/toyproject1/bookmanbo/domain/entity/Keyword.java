@@ -20,5 +20,21 @@ public class Keyword {
 
     private String contents;
     @OneToMany(mappedBy = "keyword")
-    private List<NoteKeyword> keywords = new ArrayList<>();
+    private List<NoteKeyword> noteKeywords = new ArrayList<>();
+
+    public Keyword(String contents) {
+        this.contents = contents;
+    }
+
+    public static List<Keyword> from(List<String> newKeywordList) {
+        List<Keyword> keywords = new ArrayList<>();
+        for (String keyword : newKeywordList) {
+            keywords.add(new Keyword(keyword));
+        }
+        return keywords;
+    }
+
+    public void addNoteKeyword(NoteKeyword noteKeyword) {
+        noteKeywords.add(noteKeyword);
+    }
 }
