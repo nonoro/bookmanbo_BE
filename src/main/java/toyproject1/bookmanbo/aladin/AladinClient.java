@@ -83,7 +83,6 @@ public class AladinClient {
                 .build()
                 .encode()
                 .toUri();
-        System.out.println(uri);
 
         var headers=new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
