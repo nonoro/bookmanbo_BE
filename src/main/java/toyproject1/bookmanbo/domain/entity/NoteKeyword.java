@@ -27,4 +27,8 @@ public class NoteKeyword {
         this.note = note;
         this.keyword = keyword;
     }
+
+    public String keywordName() {
+        return keyword.getContents();
+    }
 }
