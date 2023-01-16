@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import toyproject1.bookmanbo.domain.Period;
 import toyproject1.bookmanbo.domain.Status;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class MyBook {
     @JoinColumn(name = "account_id")
     private Account account;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "isbn")
+    @JoinColumn(name = "book_id")
     private Book book;
     @Embedded
     private Period period;
