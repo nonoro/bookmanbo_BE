@@ -13,3 +13,11 @@ spring:
         format_sql: true
         show_sql: true
     open-in-view: false
+
+aladin:
+  url:
+    item_search: http://www.aladin.co.kr/ttb/api/ItemSearch.aspx
+    item_list: http://www.aladin.co.kr/ttb/api/ItemList.aspx
+    item_lookup:  http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx
+  client:
+    TTBKey: ttbkmimi05281551001
