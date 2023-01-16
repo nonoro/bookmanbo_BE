@@ -127,15 +127,17 @@ class NoteRepositoryTest {
         if (findKeywords.isEmpty()) {
             defaultKeywords.forEach(k -> keywordRepository.save(new Keyword(k)));
         } else {
+            List<String> saveKeywords = new ArrayList<>();
+            saveKeywords.addAll(defaultKeywords);
+
             for (Keyword findKeyword : findKeywords) {
-                for (int j = 0; j < defaultKeywords.size(); j++) {
-                    if (findKeyword.getContents().equals(defaultKeywords.get(j))) {
-                        defaultKeywords.remove(j);
+                for (int j = 0; j < saveKeywords.size(); j++) {
+                    if (findKeyword.getContents().equals(saveKeywords.get(j))) {
+                        saveKeywords.remove(j);
                     }
                 }
             }
-
-            List<Keyword> keywords = Keyword.from(defaultKeywords);
+            List<Keyword> keywords = Keyword.from(saveKeywords);
             keywordRepository.saveAll(keywords);
         }
 
