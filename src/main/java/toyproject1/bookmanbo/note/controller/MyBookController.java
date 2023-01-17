@@ -19,7 +19,7 @@ public class MyBookController {
 
     private final MyBookService myBookService;
 
-    @GetMapping("book/{myBookId}")
+    @GetMapping("/book/{myBookId}")
     public Response<MyBookResponse> getMyBook(@PathVariable Long myBookId) {
 
         return myBookService.getMyBook(myBookId);
