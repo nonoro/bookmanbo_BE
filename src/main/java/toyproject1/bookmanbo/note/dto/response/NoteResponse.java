@@ -1,4 +1,4 @@
-package toyproject1.bookmanbo.dto.response;
+package toyproject1.bookmanbo.note.dto.response;
 
 import toyproject1.bookmanbo.domain.entity.MyBook;
 import toyproject1.bookmanbo.domain.entity.Note;
@@ -24,5 +24,15 @@ public record NoteResponse(
                             .toList()));
         }
         return noteResponses;
+    }
+
+    public static NoteResponse from(Note note, List<NoteKeyword> noteKeywords) {
+        return new NoteResponse(
+                note.getId(),
+                note.getContents(),
+                noteKeywords.stream()
+                        .map(nk -> nk.getKeyword().getContents())
+                        .toList()
+        );
     }
 }
