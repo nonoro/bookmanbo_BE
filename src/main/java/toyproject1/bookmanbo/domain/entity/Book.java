@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,13 +15,15 @@ import java.util.List;
 @Entity
 public class Book {
 
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "book_id")
     private Long id;
+
     private String isbn;
     private String title;
     private String author;
-    private LocalDateTime pubDate;
+    private LocalDate pubDate;
     private String description;
     private String coverImage;
     private String category;
@@ -31,6 +34,9 @@ public class Book {
     private List<MyBook> myBooks = new ArrayList<>();
 
     public Book(String isbn, String title, String author, LocalDateTime pubDate, String description, String coverImage, String category, String publisher, int itemPage) {
+    }
+    public Book(String isbn, String title, String author, LocalDate pubDate, String description, String coverImage, String category, String publisher, int itemPage) {
+
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -41,4 +47,6 @@ public class Book {
         this.publisher = publisher;
         this.itemPage = itemPage;
     }
+
+
 }

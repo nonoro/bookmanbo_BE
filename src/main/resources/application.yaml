@@ -3,7 +3,11 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:testdb
+#    url: jdbc:h2:mem:testdb
+    url: jdbc:mysql://localhost:3306/chaegmanbo?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    username: root
+    password: newseung7!
+
 
   jpa:
     hibernate:
@@ -13,6 +17,7 @@ spring:
         format_sql: true
         show_sql: true
     open-in-view: false
+
 
 aladin:
   url:
