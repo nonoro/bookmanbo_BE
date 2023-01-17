@@ -2,6 +2,7 @@ package toyproject1.bookmanbo.note.dto.response;
 
 import toyproject1.bookmanbo.domain.entity.Book;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public record BookResponse(
@@ -14,7 +15,7 @@ public record BookResponse(
         String coverImage,
         String isbn,
         int itemPage,
-        LocalDateTime pubDate
+        LocalDate pubDate
 
 ) {
 
