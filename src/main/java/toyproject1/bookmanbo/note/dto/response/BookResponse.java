@@ -1,4 +1,4 @@
-package toyproject1.bookmanbo.dto.response;
+package toyproject1.bookmanbo.note.dto.response;
 
 import toyproject1.bookmanbo.domain.entity.Book;
 

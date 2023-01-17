@@ -1,4 +1,4 @@
-package toyproject1.bookmanbo.aladin.controller;
+package toyproject1.bookmanbo.note.controller;
 
 
 import lombok.RequiredArgsConstructor;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import toyproject1.bookmanbo.aladin.service.MyBookService;
-import toyproject1.bookmanbo.dto.response.MyBookResponse;
-import toyproject1.bookmanbo.dto.response.Response;
+import toyproject1.bookmanbo.note.service.MyBookService;
+import toyproject1.bookmanbo.note.dto.response.MyBookResponse;
+import toyproject1.bookmanbo.note.dto.response.Response;
 
 @RequiredArgsConstructor
 @Slf4j

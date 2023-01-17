@@ -1,4 +1,4 @@
-package toyproject1.bookmanbo.dto.request;
+package toyproject1.bookmanbo.note.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import toyproject1.bookmanbo.domain.entity.MyBook;
