@@ -20,7 +20,6 @@ public class ItemSearchRes {
     private int itemsPerPage;
     private String query;
     private int searchCategoryId;
-    private String searchCategoryName;
     private List<SearchItem> item;
 
     @Data
@@ -30,7 +29,7 @@ public class ItemSearchRes {
         private String title;
         private String link;
         private String author;
-        private String pubdate;
+        private String pubDate;
         private String description;
         private String isbn;
         private String isbn13;
@@ -43,11 +42,13 @@ public class ItemSearchRes {
         private String publisher;
         private int salesPoint;
         private boolean adult;
-        private  List<SearchSubInfo> subinfo;
+        private String categoryName;
+        private  SearchSubInfo subInfo;
 
         @Data
         @NoArgsConstructor
         public static class SearchSubInfo{
+            private int itemPage;
 
         }
 

@@ -10,6 +10,7 @@ import toyproject1.bookmanbo.config.JpaConfiguration;
 import toyproject1.bookmanbo.domain.Status;
 import toyproject1.bookmanbo.domain.entity.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ class NoteRepositoryTest {
     @Test
     void saveNoteTest() {
         Account account = new Account("test", "test", "test");
-        Book book = new Book("1231", "test", "test", LocalDateTime.now(), "test", "test", "test", "test", 100);
+        Book book = new Book("1231L", "test", "test", LocalDate.now(), "test", "test", "test", "test", 100);
         MyBook myBook = new MyBook(account, book, Status.WISH);
         Note note = new Note("정말 재미있는 책이다", myBook);
 
@@ -63,7 +64,7 @@ class NoteRepositoryTest {
     void saveNoteAndKeywordTest() {
         Set<String> keywords = Set.of("test1", "test2");
         Account account = new Account("test", "test", "test");
-        Book book = new Book("1231", "test", "test", LocalDateTime.now(), "test", "test", "test", "test", 100);
+        Book book = new Book("1231L", "test", "test", LocalDate.now(), "test", "test", "test", "test", 100);
         MyBook myBook = new MyBook(account, book, Status.WISH);
         Note note = new Note("정말 재미있는 책이다", myBook);
 
@@ -94,7 +95,7 @@ class NoteRepositoryTest {
     void updateNoteTest() {
         String updateContents = "너무 졸리다";
         Account account = new Account("test", "test", "test");
-        Book book = new Book("1231", "test", "test", LocalDateTime.now(), "test", "test", "test", "test", 100);
+        Book book = new Book("1231L", "test", "test", LocalDate.now(), "test", "test", "test", "test", 100);
         MyBook myBook = new MyBook(account, book, Status.WISH);
         Note note = new Note("정말 재미있는 책이다", myBook);
 
@@ -114,7 +115,7 @@ class NoteRepositoryTest {
     void updateKeyword() {
         List<String> defaultKeywords = List.of("test1", "test2", "test4", "test7", "test10");
         Account account = new Account("test", "test", "test");
-        Book book = new Book("1231", "test", "test", LocalDateTime.now(), "test", "test", "test", "test", 100);
+        Book book = new Book("1231L", "test", "test", LocalDate.now(), "test", "test", "test", "test", 100);
         MyBook myBook = new MyBook(account, book, Status.WISH);
         Note note = new Note("정말 재미있는 책이다", myBook);
 

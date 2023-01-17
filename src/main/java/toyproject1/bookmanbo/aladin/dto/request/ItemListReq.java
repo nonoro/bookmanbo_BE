@@ -39,6 +39,11 @@ public class ItemListReq {
     private String version= "20131101";
 //    private String outofStockfilter;
 
+
+    public ItemListReq(ItemListQueryType itemListQueryType) {
+        this.itemListQueryType = itemListQueryType;
+    }
+
     public MultiValueMap<String, String> toMultiValueMap(){
         var map=new LinkedMultiValueMap<String,String>();
         map.add("TTBKey",ttbKey);

@@ -5,16 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemListRes {
-    private String version;
+//    private String version;
     private String title;
     private String link;
-    private String pubDate;
+//    private LocalDateTime pubDate;
     private int totalResults;
     private int startIndex;
     private int itemsPerPage;
@@ -30,7 +31,7 @@ public class ItemListRes {
         private String title;
         private String link;
         private String author;
-        private String pubdate;
+        private String pubDate;
         private String description;
         private String isbn;
         private String isbn13;
@@ -43,6 +44,7 @@ public class ItemListRes {
         private String publisher;
         private int salesPoint;
         private boolean adult;
+        private String categoryName;
         private  List<SearchSubInfo> subinfo;
 
         @Data

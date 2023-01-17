@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -14,7 +15,6 @@ public class ItemLookUpRes {
     private String version;
     private String title;
     private String link;
-    private String pubDate;
     private int totalResults;
     private int startIndex;
     private int itemsPerPage;
@@ -27,35 +27,30 @@ public class ItemLookUpRes {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class SearchItem{
-        private String title;
-        private String link;
-        private String author;
-        private String pubdate;
-        private String description;
-        private String isbn;
         private String isbn13;
-        private int pricesales;
-        private int pricestandard;
+        private String title;
+        private String author;
+        private LocalDate pubDate;
+        private String description;
         private String mallType;
-        private String stockstatus;
-        private int mileage;
         private String cover;
+        private String categoryName;
         private String publisher;
+        //판매지수
         private int salesPoint;
         private boolean adult;
 
+        //회원 리뷰 평점
+        private float customerReviewRank;
+
         //책 페이지 수
-        private  Object subInfo;
+        private  SearchSubInfo subInfo;
 
         @Data
         @NoArgsConstructor
         @AllArgsConstructor
         public static class SearchSubInfo{
-            private Long itemPage;
-
-
-
-
+            private int itemPage;
         }
 
 

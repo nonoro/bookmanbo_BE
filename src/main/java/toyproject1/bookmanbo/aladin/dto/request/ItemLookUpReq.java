@@ -26,6 +26,10 @@ public class ItemLookUpReq {
     private String output="js";
     private String version= "20131101";
 
+    public ItemLookUpReq(String itemId) {
+        this.itemId = itemId;
+    }
+
     public MultiValueMap<String, String> toMultiValueMap(){
         var map=new LinkedMultiValueMap<String,String>();
         map.add("TTBKey",ttbKey);
@@ -37,5 +41,6 @@ public class ItemLookUpReq {
 
         return map;
     }
+
 
 }

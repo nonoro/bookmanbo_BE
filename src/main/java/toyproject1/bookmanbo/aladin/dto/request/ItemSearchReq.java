@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import toyproject1.bookmanbo.aladin.dto.ItemListQueryType;
 import toyproject1.bookmanbo.aladin.dto.ItemSearchQueryType;
 import toyproject1.bookmanbo.aladin.dto.SearchTarget;
 import toyproject1.bookmanbo.aladin.dto.Sort;
@@ -33,6 +34,11 @@ public class ItemSearchReq {
     private String inputEncoding="utf-8";
     private String version= "20131101";
 //    private String outofStockfilter;
+
+
+    public ItemSearchReq(String query) {
+        this.query = query;
+    }
 
     public MultiValueMap<String, String> toMultiValueMap(){
         var map=new LinkedMultiValueMap<String,String>();
