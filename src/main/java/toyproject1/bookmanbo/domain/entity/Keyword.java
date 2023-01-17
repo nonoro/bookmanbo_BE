@@ -27,11 +27,7 @@ public class Keyword {
     }
 
     public static List<Keyword> from(List<String> newKeywordList) {
-        List<Keyword> keywords = new ArrayList<>();
-        for (String keyword : newKeywordList) {
-            keywords.add(new Keyword(keyword));
-        }
-        return keywords;
+        return newKeywordList.stream().map(Keyword::new).toList();
     }
 
     public void addNoteKeyword(NoteKeyword noteKeyword) {
