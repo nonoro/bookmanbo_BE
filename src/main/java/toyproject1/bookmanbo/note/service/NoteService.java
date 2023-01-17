@@ -130,4 +130,12 @@ public class NoteService {
         }
         return false;
     }
+
+    @Transactional
+    public void delete(Long noteId) {
+        Note note = noteRepository.findById(noteId).get();
+        noteRepository.delete(note);
+        noteKeywordRepository.deleteByNote(note);
+        deleteUnusedKeyword();
+    }
 }

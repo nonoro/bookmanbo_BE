@@ -38,7 +38,7 @@ public class Note {
     @Column(updatable = false)
     protected LocalDateTime modifiedDate;
 
-    @OneToMany(mappedBy = "note")
+    @OneToMany(mappedBy = "note", orphanRemoval = true)
     private List<NoteKeyword> keywords = new ArrayList<>();
 
     public Note(String contents) {
