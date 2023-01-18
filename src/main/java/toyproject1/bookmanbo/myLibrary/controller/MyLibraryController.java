@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/my-library")
 @RequiredArgsConstructor
-public class MyBookController {
+public class MyLibraryController {
     private final MyLibraryService myLibraryService;
 
     //나의 서재에 책 추가
